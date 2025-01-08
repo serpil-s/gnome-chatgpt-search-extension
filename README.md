@@ -1,6 +1,6 @@
 # ChatGPT Search Extension for GNOME
 
-This GNOME extension integrates ChatGPT into GNOME Shell, allowing you to ask questions and search directly from the GNOME panel.
+This GNOME extension integrates ChatGPT into GNOME Shell, allowing you to ask questions and get answers directly from the GNOME panel.
 
 ## Installation
 Run the following commands:
