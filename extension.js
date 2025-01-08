@@ -14,7 +14,7 @@ function enable() {
         label: 'ChatGPT Search'
     });
     button.connect('clicked', () => {
-        imports.misc.util.spawn(['python3', `${GLib.get_home_dir()}/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s/utils.py`]);
+        imports.misc.util.spawn(['python3', `${GLib.get_home_dir()}/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s.github.com/utils.py`]);
     });
 
     Main.panel._rightBox.insert_child_at_index(button, 0);
