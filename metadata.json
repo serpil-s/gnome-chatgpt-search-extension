@@ -1,5 +1,5 @@
 {
-    "uuid": "chatgpt-search@serpil-s",
+    "uuid": "chatgpt-search@serpil-s.github.com",
     "name": "ChatGPT Search",
     "description": "Search and get answers from ChatGPT",
     "shell-version": ["43.9"],
