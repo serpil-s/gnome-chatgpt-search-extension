@@ -1,7 +1,7 @@
 import openai
 
 # OpenAI API anahtarınızı buraya ekleyin
-openai.api_key = "YOUR_OPENAI_API_KEY"
+openai.api_key = "YOUR_API_KEY"
 
 def ask_chatgpt(question):
     try:
