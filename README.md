@@ -1,0 +1,1 @@
+# gnome-chatgpt-search-extension
