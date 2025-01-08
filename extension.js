@@ -1,4 +1,4 @@
-const { St, Clutter } = imports.gi;
+const { St } = imports.gi;
 const Main = imports.ui.main;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
@@ -18,7 +18,7 @@ function enable() {
 
     button.connect('clicked', () => {
         Gio.Subprocess.new(
-            ['python3', `${GLib.get_home_dir()}/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s/utils.py`],
+            ['python3', `${GLib.get_home_dir()}/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s/utils.py`, "What is AI?"],
             Gio.SubprocessFlags.NONE
         );
     });
