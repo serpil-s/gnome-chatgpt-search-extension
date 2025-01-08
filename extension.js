@@ -17,7 +17,6 @@ function enable() {
     });
 
     button.connect('clicked', () => {
-        // Python scriptini çalıştırır
         Gio.Subprocess.new(
             ['python3', `${GLib.get_home_dir()}/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s/utils.py`],
             Gio.SubprocessFlags.NONE
