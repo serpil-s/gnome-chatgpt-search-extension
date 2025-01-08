@@ -1,8 +1,8 @@
 install:
-	mkdir -p ~/.local/share/gnome-shell/extensions/chatgpt-search@yourusername
-	cp * ~/.local/share/gnome-shell/extensions/chatgpt-search@yourusername
-	gnome-extensions enable chatgpt-search@yourusername
+	mkdir -p ~/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s
+	cp * ~/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s
+	gnome-extensions enable chatgpt-search@serpil-s
 
 uninstall:
-	gnome-extensions disable chatgpt-search@yourusername
-	rm -rf ~/.local/share/gnome-shell/extensions/chatgpt-search@yourusername
+	gnome-extensions disable chatgpt-search@serpil-s
+	rm -rf ~/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s
