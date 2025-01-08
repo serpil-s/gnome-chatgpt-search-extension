@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=ChatGPT Search
+Exec=python3 ~/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s/utils.py
+Icon=system-search
+Terminal=false
+Type=Application
+Categories=Utility;
