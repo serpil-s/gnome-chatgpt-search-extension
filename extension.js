@@ -1,5 +1,7 @@
 const { St, Clutter } = imports.gi;
 const Main = imports.ui.main;
+const Gio = imports.gi.Gio;
+const GLib = imports.gi.GLib;
 
 let button;
 
@@ -13,8 +15,13 @@ function enable() {
         track_hover: true,
         label: 'ChatGPT Search'
     });
+
     button.connect('clicked', () => {
-        imports.misc.util.spawn(['python3', `${GLib.get_home_dir()}/.local/share/gnome-shell/extensions/gnome-chatgpt-search-extension@serpil-s.github.com/utils.py`]);
+        // Python scriptini çalıştırır
+        Gio.Subprocess.new(
+            ['python3', `${GLib.get_home_dir()}/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s/utils.py`],
+            Gio.SubprocessFlags.NONE
+        );
     });
 
     Main.panel._rightBox.insert_child_at_index(button, 0);
