@@ -1,6 +1,5 @@
-const { Gio, St, Clutter } = imports.gi;
+const { St, Clutter } = imports.gi;
 const Main = imports.ui.main;
-const Util = imports.misc.util;
 
 let button;
 
@@ -15,7 +14,7 @@ function enable() {
         label: 'ChatGPT Search'
     });
     button.connect('clicked', () => {
-        Util.spawn(['python3', `${Me.path}/utils.py`]);
+        imports.misc.util.spawn(['python3', `${GLib.get_home_dir()}/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s/utils.py`]);
     });
 
     Main.panel._rightBox.insert_child_at_index(button, 0);
