@@ -1,0 +1,8 @@
+{
+    "uuid": "chatgpt-search",
+    "name": "ChatGPT Search",
+    "description": "Search and get answers from ChatGPT",
+    "shell-version": ["43.9"],
+    "url": "https://github.com/yourusername/gnome-chatgpt-search-extension",
+    "version": 1
+}
