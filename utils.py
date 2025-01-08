@@ -1,4 +1,5 @@
 import openai
+import sys
 
 # OpenAI API anahtarınızı buraya ekleyin
 openai.api_key = "YOUR_API_KEY"
@@ -12,8 +13,13 @@ def ask_chatgpt(question):
         )
         print(response['choices'][0]['text'].strip())
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(2)
 
 if __name__ == "__main__":
-    question = input("Enter your question for ChatGPT: ")
-    ask_chatgpt(question)
+    if len(sys.argv) > 1:
+        question = " ".join(sys.argv[1:])
+        ask_chatgpt(question)
+    else:
+        print("No question provided.", file=sys.stderr)
+        sys.exit(2)
