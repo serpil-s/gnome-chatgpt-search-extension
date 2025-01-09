@@ -12,9 +12,9 @@ install:
 	sudo cp ai-question-search.desktop /usr/share/applications/
 	@echo "Checking dependencies..."
 	@if ! command -v python3 &>/dev/null; then sudo apt install -y python3; fi
-	@if ! python3 -c "import ai21" &>/dev/null; then pip install ai21 --break-system-packages; fi
+	@if ! python3 -c "import ai21" &>/dev/null; then pip install ai21 --break-system-packages || true; fi
 	@echo "Enabling GNOME extension..."
-	gnome-extensions enable $(EXTENSION_UUID)
+	gnome-extensions enable $(EXTENSION_UUID) || true
 	@echo "Installation complete."
 
 uninstall:
@@ -22,5 +22,5 @@ uninstall:
 	rm -rf $(INSTALL_DIR)
 	sudo rm -f /usr/share/gnome-shell/search-providers/ai-question-search-provider.ini
 	sudo rm -f /usr/share/applications/ai-question-search.desktop
-	gnome-extensions disable $(EXTENSION_UUID)
+	gnome-extensions disable $(EXTENSION_UUID) || true
 	@echo "Uninstallation complete."
