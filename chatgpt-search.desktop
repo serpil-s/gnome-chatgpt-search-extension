@@ -1,7 +1,4 @@
 [Desktop Entry]
-Name=ChatGPT Search
-Exec=python3 ~/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s/utils.py
-Icon=system-search
-Terminal=false
-Type=Application
-Categories=Utility;
+Type=Service
+Name=AI21 Search
+Exec=/usr/bin/python3 /usr/share/gnome-shell/extensions/ai21-search@serpil-s/ai21_search.py "%u"
