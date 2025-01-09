@@ -12,7 +12,7 @@ install:
 	sudo cp chatgpt-search.desktop /usr/share/applications/
 	@echo "Checking dependencies..."
 	@if ! command -v python3 &>/dev/null; then sudo apt install -y python3; fi
-	@if ! python3 -c "import ai21" &>/dev/null; then pip install ai21; fi
+	@if ! python3 -c "import ai21" &>/dev/null; then pip install ai21 --break-system-packages; fi
 	@echo "Enabling GNOME extension..."
 	gnome-extensions enable $(EXTENSION_UUID)
 	@echo "Installation complete."
