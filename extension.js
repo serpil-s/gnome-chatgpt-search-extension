@@ -1,31 +1,31 @@
-const { St } = imports.gi;
+const { Clutter, St } = imports.gi;
 const Main = imports.ui.main;
-const Gio = imports.gi.Gio;
-const GLib = imports.gi.GLib;
 
-let button;
-
-function init() {}
+let button; // Uzantı UI bileşeni için bir değişken
 
 function enable() {
+    // Button UI nesnesi oluştur
     button = new St.Button({
         style_class: 'system-menu-action',
         reactive: true,
         can_focus: true,
         track_hover: true,
-        label: 'ChatGPT Search'
+        label: 'AI Question Search',
     });
 
+    // GNOME Shell UI'ya ekle
+    Main.panel._leftBox.insert_child_at_index(button, 0);
+
+    // Tıklama olayını bağla
     button.connect('clicked', () => {
-        Gio.Subprocess.new(
-            ['python3', `${GLib.get_home_dir()}/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s/utils.py`, "What is AI?"],
-            Gio.SubprocessFlags.NONE
-        );
+        imports.misc.util.spawn(['python3', '/usr/share/gnome-shell/extensions/ai-question-search@serpil-s/ai_question_search.py']);
     });
-
-    Main.panel._rightBox.insert_child_at_index(button, 0);
 }
 
 function disable() {
-    Main.panel._rightBox.remove_child(button);
+    // Button nesnesini kaldır ve temizle
+    if (button) {
+        button.destroy(); // Nesneyi yok et
+        button = null;    // Referansı temizle
+    }
 }
