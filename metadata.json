@@ -1,7 +1,7 @@
 {
-    "uuid": "ai21-search@serpil-s",
-    "name": "AI21 Search",
-    "description": "GNOME search provider for AI21 Labs API",
+    "uuid": "ai-question-search@serpil-s",
+    "name": "AI Question Search",
+    "description": "GNOME search provider for AI API",
     "shell-version": ["43"],
     "version": 1
 }
