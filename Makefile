@@ -1,15 +1,26 @@
+EXTENSION_UUID = ai21-search@serpil-s
+INSTALL_DIR = ~/.local/share/gnome-shell/extensions/$(EXTENSION_UUID)
+
+.PHONY: install uninstall
+
 install:
-	mkdir -p ~/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s
-	cp * ~/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s
+	@echo "Installing AI21 Search Extension..."
+	mkdir -p $(INSTALL_DIR)
+	cp -r * $(INSTALL_DIR)
 	sudo mkdir -p /usr/share/gnome-shell/search-providers
 	sudo cp chatgpt-search-provider.ini /usr/share/gnome-shell/search-providers/
 	sudo cp chatgpt-search.desktop /usr/share/applications/
-	sudo cp org.gnome.ChatGPT.service /usr/share/dbus-1/services/
-	gnome-extensions enable chatgpt-search@serpil-s
+	@echo "Checking dependencies..."
+	@if ! command -v python3 &>/dev/null; then sudo apt install -y python3; fi
+	@if ! python3 -c "import ai21" &>/dev/null; then pip install ai21; fi
+	@echo "Enabling GNOME extension..."
+	gnome-extensions enable $(EXTENSION_UUID)
+	@echo "Installation complete."
 
 uninstall:
-	gnome-extensions disable chatgpt-search@serpil-s || echo "Extension not enabled."
-	rm -rf ~/.local/share/gnome-shell/extensions/chatgpt-search@serpil-s
+	@echo "Uninstalling AI21 Search Extension..."
+	rm -rf $(INSTALL_DIR)
 	sudo rm -f /usr/share/gnome-shell/search-providers/chatgpt-search-provider.ini
 	sudo rm -f /usr/share/applications/chatgpt-search.desktop
-	sudo rm -f /usr/share/dbus-1/services/org.gnome.ChatGPT.service
+	gnome-extensions disable $(EXTENSION_UUID)
+	@echo "Uninstallation complete."
