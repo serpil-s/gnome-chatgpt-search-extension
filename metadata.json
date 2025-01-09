@@ -3,6 +3,6 @@
     "name": "AI Question Search",
     "description": "GNOME search provider for AI API",
     "shell-version": ["43"],
-    "version": 1,
-    "url": "https://github.com/serpil-s/gnome-chatgpt-search-extension"
+    "version": 1
 }
+
