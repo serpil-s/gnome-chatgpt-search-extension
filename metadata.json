@@ -1,8 +1,7 @@
 {
-    "uuid": "chatgpt-search@serpil-s",
-    "name": "ChatGPT Search",
-    "description": "Search and get answers from ChatGPT",
-    "shell-version": ["43.9"],
-    "url": "https://github.com/serpil-s/gnome-chatgpt-search-extension",
+    "uuid": "ai21-search@serpil-s",
+    "name": "AI21 Search",
+    "description": "GNOME search provider for AI21 Labs API",
+    "shell-version": ["43"],
     "version": 1
 }
