@@ -1,10 +1,10 @@
-EXTENSION_UUID = ai21-search@serpil-s
+EXTENSION_UUID = ai-question-search@serpil-s
 INSTALL_DIR = ~/.local/share/gnome-shell/extensions/$(EXTENSION_UUID)
 
 .PHONY: install uninstall
 
 install:
-	@echo "Installing AI21 Search Extension..."
+	@echo "Installing AI Question Search Extension..."
 	mkdir -p $(INSTALL_DIR)
 	cp -r * $(INSTALL_DIR)
 	sudo mkdir -p /usr/share/gnome-shell/search-providers
@@ -18,7 +18,7 @@ install:
 	@echo "Installation complete."
 
 uninstall:
-	@echo "Uninstalling AI21 Search Extension..."
+	@echo "Uninstalling AI Question Search Extension..."
 	rm -rf $(INSTALL_DIR)
 	sudo rm -f /usr/share/gnome-shell/search-providers/chatgpt-search-provider.ini
 	sudo rm -f /usr/share/applications/chatgpt-search.desktop
