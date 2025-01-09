@@ -1,9 +1,10 @@
-# ChatGPT Search Extension for GNOME
+# AI21 GNOME Search Extension
 
-This GNOME extension integrates ChatGPT into GNOME Shell, allowing you to ask questions and get answers directly from the GNOME panel.
+This GNOME extension integrates AI21 Labs API with GNOME search.
 
 ## Installation
-Run the following commands:
+
+Run the following commands to install the extension:
 ```bash
 git clone https://github.com/serpil-s/gnome-chatgpt-search-extension.git
 cd gnome-chatgpt-search-extension
