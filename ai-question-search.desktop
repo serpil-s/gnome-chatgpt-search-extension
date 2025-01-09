@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Service
+Name=AI Question Search
+Exec=/usr/bin/python3 /usr/share/gnome-shell/extensions/ai-question-search@serpil-s/ai_question_search.py "%u"
